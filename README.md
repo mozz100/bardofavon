@@ -13,7 +13,7 @@ DBAD! Built on the hard work of others at:
 Source code:
 [https://github.com/mozz100/bardofavon](https://github.com/mozz100/bardofavon)
 
-Data file:
+Data file (~6MB):
 [https://raw.github.com/mozz100/bardofavon/master/db/initial_data.sql](https://raw.github.com/mozz100/bardofavon/master/db/initial_data.sql)
 
 More background:
