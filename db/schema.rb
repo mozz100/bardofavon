@@ -14,39 +14,33 @@
 ActiveRecord::Schema.define(:version => 0) do
 
   create_table "chapters", :force => true do |t|
-    t.string  "WorkID",      :limit => 32, :null => false
-    t.integer "Act",                       :null => false
-    t.integer "Scene",                     :null => false
-    t.text    "Description",               :null => false
-    t.integer "work_id",                   :null => false
+    t.integer "Act",         :null => false
+    t.integer "Scene",       :null => false
+    t.text    "Description", :null => false
+    t.integer "work_id",     :null => false
   end
 
   add_index "chapters", ["work_id"], :name => "work_id"
 
   create_table "characters", :force => true do |t|
-    t.string "CharID",      :limit => 32,  :null => false
     t.string "CharName",    :limit => 128, :null => false
     t.string "Abbrev",      :limit => 32,  :null => false
-    t.string "Works",       :limit => 128, :null => false
     t.text   "Description",                :null => false
   end
 
   create_table "paragraphs", :force => true do |t|
-    t.string  "WorkID",       :limit => 32, :null => false
-    t.integer "ParagraphNum",               :null => false
-    t.string  "CharID",       :limit => 32, :null => false
-    t.text    "PlainText",                  :null => false
-    t.integer "Act",                        :null => false
-    t.integer "Scene",                      :null => false
-    t.integer "work_id",                    :null => false
-    t.integer "character_id",               :null => false
+    t.integer "ParagraphNum", :null => false
+    t.text    "PlainText",    :null => false
+    t.integer "Act",          :null => false
+    t.integer "Scene",        :null => false
+    t.integer "work_id",      :null => false
+    t.integer "character_id", :null => false
   end
 
   add_index "paragraphs", ["character_id"], :name => "character_id"
   add_index "paragraphs", ["work_id"], :name => "work_id"
 
   create_table "works", :force => true do |t|
-    t.string  "WorkID",    :limit => 32,  :null => false
     t.string  "Title",     :limit => 128, :null => false
     t.text    "LongTitle",                :null => false
     t.integer "Date",                     :null => false
