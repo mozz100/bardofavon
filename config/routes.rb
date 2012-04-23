@@ -1,4 +1,10 @@
 Shakespeare::Application.routes.draw do
+  get "welcome/index"
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +54,7 @@ Shakespeare::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
