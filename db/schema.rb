@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423215028) do
+ActiveRecord::Schema.define(:version => 20120424124144) do
 
   create_table "chapters", :force => true do |t|
     t.integer "Act",         :null => false
@@ -29,23 +29,20 @@ ActiveRecord::Schema.define(:version => 20120423215028) do
   end
 
   create_table "paragraphs", :force => true do |t|
-    t.integer "ParagraphNum", :null => false
-    t.text    "PlainText",    :null => false
-    t.integer "Act",          :null => false
-    t.integer "Scene",        :null => false
-    t.integer "work_id",      :null => false
-    t.integer "character_id", :null => false
+    t.integer "ParagraphNum",                :null => false
+    t.text    "PlainText",                   :null => false
+    t.integer "character_id",                :null => false
+    t.integer "chapter_id",   :default => 0, :null => false
   end
 
   add_index "paragraphs", ["character_id"], :name => "character_id"
-  add_index "paragraphs", ["work_id"], :name => "work_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
     t.integer  "item"
     t.string   "table"
-    t.integer  "month",      :limit => 2
+    t.integer  "month"
     t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
@@ -54,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20120423215028) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                                 :null => false
+    t.string   "encrypted_password",                    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -64,8 +61,8 @@ ActiveRecord::Schema.define(:version => 20120423215028) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

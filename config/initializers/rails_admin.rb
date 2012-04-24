@@ -1,4 +1,4 @@
-# RailsAdmin config file. Generated on April 23, 2012 22:58
+# RailsAdmin config file. Generated on April 24, 2012 14:18
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  config.excluded_models = [Paragraph]
+  config.excluded_models = [Paragraph, User]
 
   # Add models here if you want to go 'whitelist mode':
   # config.included_models = [Chapter, Character, Paragraph, User, Work]
@@ -79,57 +79,64 @@ RailsAdmin.config do |config|
 
   # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible. (visible(true))
 
-   config.model Chapter do
-     # Found associations:
-       configure :work, :belongs_to_association   #   # Found columns:
-       configure :id, :integer 
-       configure :Act, :integer 
-       configure :Scene, :integer 
-       configure :Description, :text 
-       configure :work_id, :integer         # Hidden   #   # Sections:
-       object_label_method :Description
-     list do; end
-     export do; end
-     show do; end
-     edit do; end
-     create do; end
-     update do; end
-   end
-   config.model Character do
-     # Found associations:
-       # configure :paragraphs, :has_many_association 
-       configure :works, :has_many_association   #   # Found columns:
-       configure :CharName, :string 
-       configure :Abbrev, :string 
-       configure :Description, :text 
-       configure :id, :integer   #   # Sections:
-       object_label_method :CharName
-     list do; end
-     export do; end
-     show do; end
-     edit do; end
-     create do; end
-     update do; end
-   end
-   config.model Paragraph do
-     # Found associations:
-       configure :work, :belongs_to_association 
-       configure :character, :belongs_to_association   #   # Found columns:
-       configure :id, :integer 
-       configure :ParagraphNum, :integer 
-       configure :PlainText, :text 
-       configure :Act, :integer 
-       configure :Scene, :integer 
-       configure :work_id, :integer         # Hidden 
-       configure :character_id, :integer         # Hidden   #   # Sections:
-       object_label_method :ParagraphNum
-     list do; end
-     export do; end
-     show do; end
-     edit do; end
-     create do; end
-     update do; end
-   end
+  config.model Chapter do
+    object_label_method :Description
+  end
+  config.model Character do
+    object_label_method :CharName
+  end
+  config.model Work do
+    object_label_method :Title
+  end
+
+  # config.model Chapter do
+  #   # Found associations:
+  #     configure :work, :belongs_to_association 
+  #     configure :paragraphs, :has_many_association   #   # Found columns:
+  #     configure :id, :integer 
+  #     configure :Act, :integer 
+  #     configure :Scene, :integer 
+  #     configure :Description, :text 
+  #     configure :work_id, :integer         # Hidden   #   # Sections:
+  #   list do; end
+  #   export do; end
+  #   show do; end
+  #   edit do; end
+  #   create do; end
+  #   update do; end
+  # end
+  # config.model Character do
+  #   # Found associations:
+  #     configure :paragraphs, :has_many_association 
+  #     configure :chapters, :has_many_association 
+  #     configure :works, :has_many_association   #   # Found columns:
+  #     configure :id, :integer 
+  #     configure :CharName, :string 
+  #     configure :Abbrev, :string 
+  #     configure :Description, :text   #   # Sections:
+  #   list do; end
+  #   export do; end
+  #   show do; end
+  #   edit do; end
+  #   create do; end
+  #   update do; end
+  # end
+  # config.model Paragraph do
+  #   # Found associations:
+  #     configure :character, :belongs_to_association 
+  #     configure :chapter, :belongs_to_association   #   # Found columns:
+  #     configure :id, :integer 
+  #     configure :ParagraphNum, :integer 
+  #     configure :PlainText, :text 
+  #     configure :character_id, :integer         # Hidden 
+  #     configure :chapter_id, :integer         # Hidden   #   # Sections:
+  #   list do; end
+  #   export do; end
+  #   show do; end
+  #   edit do; end
+  #   create do; end
+  #   update do; end
+  # end
   # config.model User do
   #   # Found associations:
   #   # Found columns:
@@ -154,22 +161,21 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  config.model Work do
-     # Found associations:
-       # configure :paragraphs, :has_many_association 
-       configure :chapters, :has_many_association 
-       configure :characters, :has_many_association   #   # Found columns:
-       configure :Title, :string 
-       configure :LongTitle, :text 
-       configure :Date, :integer 
-       configure :GenreType, :string 
-       configure :id, :integer   #   # Sections:
-     object_label_method :Title
-     list do; end
-     export do; end
-     show do; end
-     edit do; end
-     create do; end
-     update do; end
-  end
+  # config.model Work do
+  #   # Found associations:
+  #     configure :chapters, :has_many_association 
+  #     configure :paragraphs, :has_many_association 
+  #     configure :characters, :has_many_association   #   # Found columns:
+  #     configure :id, :integer 
+  #     configure :Title, :string 
+  #     configure :LongTitle, :text 
+  #     configure :Date, :integer 
+  #     configure :GenreType, :string   #   # Sections:
+  #   list do; end
+  #   export do; end
+  #   show do; end
+  #   edit do; end
+  #   create do; end
+  #   update do; end
+  # end
 end

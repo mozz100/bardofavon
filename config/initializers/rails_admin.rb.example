@@ -1,4 +1,4 @@
-# RailsAdmin config file. Generated on April 23, 2012 22:58
+# RailsAdmin config file. Generated on April 24, 2012 14:18
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
@@ -81,7 +81,8 @@ RailsAdmin.config do |config|
 
   # config.model Chapter do
   #   # Found associations:
-  #     configure :work, :belongs_to_association   #   # Found columns:
+  #     configure :work, :belongs_to_association 
+  #     configure :paragraphs, :has_many_association   #   # Found columns:
   #     configure :id, :integer 
   #     configure :Act, :integer 
   #     configure :Scene, :integer 
@@ -97,11 +98,12 @@ RailsAdmin.config do |config|
   # config.model Character do
   #   # Found associations:
   #     configure :paragraphs, :has_many_association 
+  #     configure :chapters, :has_many_association 
   #     configure :works, :has_many_association   #   # Found columns:
+  #     configure :id, :integer 
   #     configure :CharName, :string 
   #     configure :Abbrev, :string 
-  #     configure :Description, :text 
-  #     configure :id, :integer   #   # Sections:
+  #     configure :Description, :text   #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
@@ -111,15 +113,13 @@ RailsAdmin.config do |config|
   # end
   # config.model Paragraph do
   #   # Found associations:
-  #     configure :work, :belongs_to_association 
-  #     configure :character, :belongs_to_association   #   # Found columns:
+  #     configure :character, :belongs_to_association 
+  #     configure :chapter, :belongs_to_association   #   # Found columns:
   #     configure :id, :integer 
   #     configure :ParagraphNum, :integer 
   #     configure :PlainText, :text 
-  #     configure :Act, :integer 
-  #     configure :Scene, :integer 
-  #     configure :work_id, :integer         # Hidden 
-  #     configure :character_id, :integer         # Hidden   #   # Sections:
+  #     configure :character_id, :integer         # Hidden 
+  #     configure :chapter_id, :integer         # Hidden   #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
@@ -153,14 +153,14 @@ RailsAdmin.config do |config|
   # end
   # config.model Work do
   #   # Found associations:
-  #     configure :paragraphs, :has_many_association 
   #     configure :chapters, :has_many_association 
+  #     configure :paragraphs, :has_many_association 
   #     configure :characters, :has_many_association   #   # Found columns:
+  #     configure :id, :integer 
   #     configure :Title, :string 
   #     configure :LongTitle, :text 
   #     configure :Date, :integer 
-  #     configure :GenreType, :string 
-  #     configure :id, :integer   #   # Sections:
+  #     configure :GenreType, :string   #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
