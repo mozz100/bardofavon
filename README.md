@@ -16,6 +16,9 @@ Source code:
 Data file (~6MB):
 [https://raw.github.com/mozz100/bardofavon/master/db/initial_data.sql](https://raw.github.com/mozz100/bardofavon/master/db/initial_data.sql)
 
+Data file after some normalisation (~6MB):
+[https://raw.github.com/mozz100/bardofavon/master/db/normalised_data_1.sql](https://raw.github.com/mozz100/bardofavon/master/db/normalised_data_1.sql)
+
 More background:
 [https://github.com/edent/Open-Source-Shakespeare/issues/1](https://github.com/edent/Open-Source-Shakespeare/issues/1)
 
