@@ -1,0 +1,18 @@
+<tr>
+  <% if paragraph.character.Abbrev == 'xxx' %>
+    <td colspan="2">
+      <i><%= simple_format paragraph.PlainText %></i>
+    </td>
+  <% elsif paragraph.character.Abbrev == 'Poet' %>  
+    <td colspan="2">
+      <%= simple_format paragraph.PlainText %>
+    </td>
+  <% else %>
+    <td class="character">
+        <p><b><%= paragraph.character.CharName %>:</b></p>
+    </td>
+    <td>
+        <%= simple_format paragraph.PlainText %>
+    </td>
+  <% end %>
+</tr>

@@ -1,0 +1,7 @@
+<h1><%= @work.Title %></h1>
+
+<ul>
+  <% @work.chapters.order('Act, Scene').each do |chapter| %>
+    <li><%= chapter_title chapter %></li>
+  <% end %>
+</ul>
