@@ -1,5 +1,10 @@
 <h1><%= @work.title %></h1>
 
+<% unless @work.genre == 'Poem' %>
+  <%= link_to 'Dramatis Personae', work_characters_path(@work) %>
+<% end %>
+
+
 <ul>
   <% @work.chapters.order('act, scene').each do |chapter| %>
     <li><%= chapter_title chapter %></li>

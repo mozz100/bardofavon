@@ -1,0 +1,11 @@
+<h1><%= link_to @work.title, @work %></h1>
+
+<h2>Dramatis Personae</h2>
+
+<ul>
+  <% @characters.each do |character| %>
+    <li>
+      <%= character.name -%><%= ", " + character.description unless character.description.empty? %>
+    </li>
+  <% end %>
+</ul>

@@ -3,7 +3,10 @@ Shakespeare::Application.routes.draw do
   match "about" => "welcome#index", :as => 'about'
   devise_for :users
 
-  resources :works
+  resources :works do
+    resources :characters
+  end
+
   resources :chapters
 
   # The priority is based upon order of creation:
