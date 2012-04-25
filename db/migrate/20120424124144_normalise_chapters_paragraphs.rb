@@ -3,7 +3,7 @@ class NormaliseChaptersParagraphs < ActiveRecord::Migration
     # add column to paragraphs table
     add_column :paragraphs, :chapter_id, :integer, :default => 0, :null => false
 
-    # populate new column
+    # populate new column.  Annoyingly this doesn't work on PGSQL
     Paragraph.connection.execute("""
       UPDATE paragraphs, chapters 
       SET paragraphs.chapter_id = chapters.id

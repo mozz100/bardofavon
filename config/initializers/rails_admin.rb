@@ -75,107 +75,17 @@ RailsAdmin.config do |config|
   #   end
   # end
 
-  # Your model's configuration, to help you get started:
-
   # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible. (visible(true))
 
   config.model Chapter do
-    object_label_method :Description
+    object_label_method :description
   end
   config.model Character do
-    object_label_method :CharName
+    object_label_method :name
   end
   config.model Work do
-    object_label_method :Title
+    object_label_method :title
   end
 
-  # config.model Chapter do
-  #   # Found associations:
-  #     configure :work, :belongs_to_association 
-  #     configure :paragraphs, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :Act, :integer 
-  #     configure :Scene, :integer 
-  #     configure :Description, :text 
-  #     configure :work_id, :integer         # Hidden   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
-  # config.model Character do
-  #   # Found associations:
-  #     configure :paragraphs, :has_many_association 
-  #     configure :chapters, :has_many_association 
-  #     configure :works, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :CharName, :string 
-  #     configure :Abbrev, :string 
-  #     configure :Description, :text   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
-  # config.model Paragraph do
-  #   # Found associations:
-  #     configure :character, :belongs_to_association 
-  #     configure :chapter, :belongs_to_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :ParagraphNum, :integer 
-  #     configure :PlainText, :text 
-  #     configure :character_id, :integer         # Hidden 
-  #     configure :chapter_id, :integer         # Hidden   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
-  # config.model User do
-  #   # Found associations:
-  #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :email, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
-  # config.model Work do
-  #   # Found associations:
-  #     configure :chapters, :has_many_association 
-  #     configure :paragraphs, :has_many_association 
-  #     configure :characters, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :Title, :string 
-  #     configure :LongTitle, :text 
-  #     configure :Date, :integer 
-  #     configure :GenreType, :string   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
+
 end
