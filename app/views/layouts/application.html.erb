@@ -8,7 +8,15 @@
 </head>
 <body>
 
-<%= yield %>
+<p style="float: right;">
+    <%= link_to "Admin", :rails_admin %>
+  | <%= link_to "About", :about %>
+</p>
+<p style="float: left;"><%= link_to "Complete works of Shakespeare", :root %></p>
+
+<div style="clear: both">
+  <%= yield %>
+</div>
 
 </body>
 </html>
