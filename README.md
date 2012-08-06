@@ -3,7 +3,7 @@ bardofavon
 
 Open source Shakespeare data
 
-This is the source code, a running instance can be found on [heroku](http://bardofavon.herokuapp.com/)
+This is the source code, a running instance can be found on [webfaction](http://shakespeare.rmorrison.net/)
 
 DBAD! Built on the hard work of others at:
 
